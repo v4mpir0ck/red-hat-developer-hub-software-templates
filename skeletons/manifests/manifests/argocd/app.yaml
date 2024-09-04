@@ -5,6 +5,7 @@ metadata:
   annotations:
     argocd/app-name: ${{ values.repoName }}
     backstage.io/kubernetes-id: ${{ values.repoName }}
+    sonarqube.org/project-key:  ${{ values.repoName }}
 spec:
   destination:
     namespace: ${{ values.namespace }}

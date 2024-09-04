@@ -13,6 +13,7 @@ spec:
         app: ${{ values.repoName }}
         app.kubernetes.io/component: backstage
         backstage.io/kubernetes-id: ${{ values.namespace }}
+        sonarqube.org/project-key:  ${{ values.repoName }}
     spec:
       containers:
         - name: ${{ values.repoName }}
