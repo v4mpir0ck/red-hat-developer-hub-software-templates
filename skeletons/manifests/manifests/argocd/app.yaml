@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: ${{ values.namespace }}
     server: https://kubernetes.default.svc
-  project: default
+  project: ${{ values.argocd-project }}
   source:
     path: manifests/base
     repoURL: https://${{ values.sourceControl }}/${{ values.orgName }}/${{ values.repoName }}

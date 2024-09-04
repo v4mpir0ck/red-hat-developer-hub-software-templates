@@ -19,9 +19,13 @@ spec:
         - repoName
         - port
         - componentName
+        - argocd-project
       properties:
         orgName:
           title: Organization Name
+          type: string
+        argocd-project:
+          title: Argocd Project
           type: string
         repoName:
           title: Repository Name
@@ -133,6 +137,7 @@ spec:
           hostUrl: ${{ parameters.hostUrl }}
           imageRepository: ${{ parameters.imageRepository }}
           port: ${{ parameters.port }}
+          argocd-project: ${{ parameters.argocd-project }}
           sourceControl: github.com
 
     - id: publish
