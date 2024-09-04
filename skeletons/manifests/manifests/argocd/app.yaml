@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: ${{ values.repoName | dump }}
-  # annotations:
-  #   argocd/app-name: backstage-testdocs-jls 
-  #   backstage.io/kubernetes-id: backstage-testdocs-jls
+  annotations:
+    argocd/app-name: ${{ values.repoName }}
+    backstage.io/kubernetes-id: ${{ values.repoName }}
 spec:
   destination:
     namespace: ${{ values.namespace }}
