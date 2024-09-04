@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ${{ values.repoName }}
+  namespace: ${{ values.namespace }}
+  labels:
+    app: ${{ values.repoName }}
+    app.kubernetes.io/component: backstage
+    backstage.io/kubernetes-id: ${{ values.namespace }}
+spec:
+  host: ${{ values.hostUrl }}
+  to:
+    kind: Service
+    name: ${{ values.repoName }}
+  port:
+    targetPort: ${{ values.port }}
+  tls:
+    termination: edge
+  wildcardPolicy: None
